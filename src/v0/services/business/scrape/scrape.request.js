@@ -32,6 +32,6 @@ module.exports = async ( url ) => {
     let nextPage = $('a.pagination--next').attr('href');
 
     return {
-        business: scraped , nextPage
+        pageData: scraped , nextPage
     };
 };

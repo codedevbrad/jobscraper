@@ -1,11 +1,11 @@
 const axios   = require("axios");
 const cheerio = require("cheerio");
 
+
 const insert = ( index , full , string ) => {
     if (index > 0) {
       return full.substring(0, index) + string + full.substr(index);
     }
-
     return string + full;
 };
 
@@ -38,5 +38,9 @@ module.exports = async ( url ) => {
         });
     });
 
-    return scraped;
+    let nextPage = $('a.pagination--next').attr('href');
+
+    return { 
+       scraped , nextPage
+    };
 };

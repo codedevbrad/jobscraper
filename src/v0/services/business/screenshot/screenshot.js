@@ -36,7 +36,8 @@ async function DesktopScreenshot ( page , url ) {
             .catch(  err => console.error( err ));
 } 
 
-( async ( url ) => {
+
+module.exports = async ( url ) => {
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920 , height: 1080 }
     });
@@ -46,10 +47,11 @@ async function DesktopScreenshot ( page , url ) {
     let desktop = await DesktopScreenshot( page , 'lake_ref' ); 
     let mobile  = await MobileScreenshot(  page , 'lake_ref' );
 
-    console.log( {
-        desktop , mobile , 
-        data: { url }
-    });
-
     await browser.close();
-} )( );
+
+    return({ 
+        desktop , 
+        mobile , 
+        url 
+    });
+}

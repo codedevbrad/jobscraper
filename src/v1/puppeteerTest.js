@@ -2,7 +2,6 @@
 
  let url = 'https://www.yell.com/ucs/UcsSearchAction.do?find=Y&keywords=accountants&location=aberdeen&pageNum=1';
 
-
  // return next page url to scrape again.
 
  const getPageData = async ( page ) => {

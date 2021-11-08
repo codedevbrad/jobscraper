@@ -4,11 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "snapshot":    "node -r dotenv/config ./src/screenshot.js",
-        "scrape_test": "node ./src/puppeteerTest",
-        "server": "nodemon server.js",
-        "test1": "node -r dotenv/config ./src/test.js",
-        "test2": "node -r dotenv/config ./src/test1.js"
+        "api":   "nodemon server.js",
+        "snap":  "node -r dotenv/config ./src/screenshot.js",
+        
+        "test1": "node -r dotenv/config ./src/v0/tests/test.js",
+        "test2": "node -r dotenv/config ./src/v0/tests/test1.js"
     },
     "author": "",
     "license": "ISC",
