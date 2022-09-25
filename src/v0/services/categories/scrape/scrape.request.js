@@ -1,6 +1,9 @@
 const axios   = require("axios");
 const cheerio = require("cheerio");
 
+/*
+    Scraping HTTP request for function.
+*/
 
 const insert = ( index , full , string ) => {
     if (index > 0) {

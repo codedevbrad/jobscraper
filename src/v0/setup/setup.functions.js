@@ -1,4 +1,5 @@
 const Category = require('../services/categories/database/db.model');
+const { delay } = require('../util');
 
 const letters  = [ 
     'a' , 'b' , 'c' , 'd' , 'e' , 'f' , 'g' ,
@@ -11,15 +12,21 @@ const cleanDb = async ( ) => {
     return Category.deleteMany({});
 }
 
+
 const generateCategoryLetters = async ( ) => {
-    letters.forEach( ( letter ) => {
+
+    for ( var i = 0; i < letters.length; i++ ) {
         try {
+            let letter = letters[ i ];
             const newDetail = new Category( { letter , data: [ ] } );
             await newDetail.save( );
-        } catch {
-            return;
+            console.log( 'creating for: ' , letter );
+            await delay( 75 );
+        } catch ( err ) {
+            console.log('error' , err );
+            throw err;
         } 
-    });
+    };
 }
 
 module.exports = {

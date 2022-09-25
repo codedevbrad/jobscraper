@@ -27,6 +27,7 @@ function paginator(items, current_page, per_page_items) {
 
 /*
     purpose: take an array of letters and scrape popular search page.
+    URL scraped: https://www.yell.com/k/popular+searches-[letter].html 
 */
 
 async function categoryNextPage ( letter , data , link ) {
@@ -38,13 +39,14 @@ async function categoryNextPage ( letter , data , link ) {
         data.push( scraped );
 
         if ( !nextPage ) {
-                return data;
+            return data;
         } else {
-                return await categoryNextPage( letter , data , nextPage );
+            return await categoryNextPage( letter , data , nextPage );
         }
     }   
-    catch {
-        console.log('error with' , link )
+    catch ( err ) {
+        console.log('error with fetching category data from' , link );
+        console.error( err );
         return data;
     }
 }

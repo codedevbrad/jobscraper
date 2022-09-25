@@ -1,12 +1,11 @@
 {
     "name": "jobscraper",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "", 
+    "main": "server.js",
     "scripts": {
-        "api":   "nodemon server.js",
-        "snap":  "node -r dotenv/config ./src/screenshot.js",
-        
+          "api": "nodemon bin/dev server.js",
+         "snap": "node -r dotenv/config ./src/screenshot.js",
         "test1": "node -r dotenv/config ./src/v0/tests/test.js",
         "test2": "node -r dotenv/config ./src/v0/tests/test1.js"
     },
@@ -20,6 +19,7 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "jest-puppeteer": "^5.0.4",
+        "mongoose": "^6.1.7",
         "nodemon": "^2.0.12",
         "puppeteer": "^9.1.1"
     }

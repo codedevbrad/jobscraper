@@ -1,5 +1,5 @@
 const yelpRequest = require('./scrape.request');
-const { delay } = require('../../util');
+const { delay } = require('../../../util');
 
 /*
     purpose: scrape a business page url and recursively sift through each next page.
